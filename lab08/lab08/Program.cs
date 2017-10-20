@@ -34,5 +34,6 @@ namespace ConsoleAppArray
             Console.ReadKey();
         }
     }
+}
 
 
