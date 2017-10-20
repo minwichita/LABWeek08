@@ -7,29 +7,44 @@ namespace ConsoleAppArray
     {
         static void Main(string[] args)
         {
-            int[] data = new int[10];
-            data[0] = 0;
-            data[1] = 1;
-            data[2] = 2;
-            data[3] = 3;
-            data[4] = 4;
-            data[5] = 5;
-            data[6] = 6;
-            data[7] = 7;
-            data[8] = 8;
-            data[9] = 9;
-            data[10] = 10;
-            Console.WriteLine(data[0]);
-            Console.WriteLine(data[1]);
-            Console.WriteLine(data[2]);
-            Console.WriteLine(data[3]);
-            Console.WriteLine(data[4]);
-            Console.WriteLine(data[5]);
-            Console.WriteLine(data[6]);
-            Console.WriteLine(data[7]);
-            Console.WriteLine(data[8]);
-            Console.WriteLine(data[9]);
-            Console.WriteLine(data[10]);
+            int[] ArrayA = new int[] { 1, 2, 3, 4, 5, 6 };
+            int[] ArrayB = new int[6];
+            // copy by operator =
+            ArrayB = ArrayA;
+
+            Console.WriteLine("*** Array copy by operator = ***");
+            Console.WriteLine("===== Before =====");
+            for (int i = 0; i < ArrayA.Length; i++)
+            {
+                Console.WriteLine("arrayA[{0}] = {1},  ArrayB[{ 0}] = { 2}",i, ArrayA[i], ArrayB[i]);
+            }
+            // change element 0 of ArrayA
+            ArrayA[0] = 9;
+            Console.WriteLine("===== After ======");
+            for (int i = 0; i < ArrayA.Length; i++)
+            {
+                Console.WriteLine("ArrayA[{0}] = {1},  ArrayB[{ 0}] = { 2}", i, ArrayA[i], ArrayB[i]);
+            }
+
+            // copy by method Array.Copy()
+            int[] ArrayC = new int[6];
+            Array.Copy(ArrayA, ArrayC, ArrayA.Length);
+
+            Console.WriteLine("*** Array copy by method Array.Copy() ***");
+            Console.WriteLine("===== Before =====");
+            for (int i = 0; i < ArrayA.Length; i++)
+            {
+                Console.WriteLine("ArrayA[{0}] = {1},  ArrayC[{ 0}] = { 2}", i, ArrayA[i], ArrayC[i]);
+            }
+            // change element 0 of ArrayA
+            ArrayA[0] = 1;
+            Console.WriteLine("===== After =====");
+            for (int i = 0; i < ArrayA.Length; i++)
+            {
+                Console.WriteLine("ArrayA[{0}] = {1},  ArrayC[{ 0}] = { 2}", i, ArrayA[i], ArrayC[i]);
+            }
+
+            // wait
             Console.ReadLine();
         }
     }
