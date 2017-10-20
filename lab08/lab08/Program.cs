@@ -1,35 +1,30 @@
 ﻿
 using System;
+using System.Collections;
 
-namespace ConsoleAppArray
+namespace ArrayListDemo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] data = new int[10];
-            data[0] = 0;
-            data[1] = 1;
-            data[2] = 2;
-            data[3] = 3;
-            data[4] = 4;
-            data[5] = 5;
-            data[6] = 6;
-            data[7] = 7;
-            data[8] = 8;
-            data[9] = 9;
-            data[10] = 10;
-            Console.WriteLine(data[0]);
-            Console.WriteLine(data[1]);
-            Console.WriteLine(data[2]);
-            Console.WriteLine(data[3]);
-            Console.WriteLine(data[4]);
-            Console.WriteLine(data[5]);
-            Console.WriteLine(data[6]);
-            Console.WriteLine(data[7]);
-            Console.WriteLine(data[8]);
-            Console.WriteLine(data[9]);
-            Console.WriteLine(data[10]);
+            ArrayList list1 = new ArrayList();
+            list1.Add(1);
+            list1.Add(2);
+            list1.Add(3);
+            list1.Add(4);
+            list1.Add(5);
+            Console.WriteLine("list1 count = {0}, capacity = {1}",
+list1.Count, list1.Capacity);
+            ArrayList list2 = new ArrayList(20);
+            Console.WriteLine("list2 count = {0}, capacity = {1}",
+list2.Count, list2.Capacity);
+            ArrayList list3 = new ArrayList(list1);
+            Console.WriteLine("list3 count = {0}, capacity = {1}",
+list3.Count, list3.Capacity);
+            ArrayList list4 = new ArrayList(list2);
+            Console.WriteLine("list4 count = {0}, capacity = {1}",
+list4.Count, list4.Capacity);
             Console.ReadLine();
         }
     }
