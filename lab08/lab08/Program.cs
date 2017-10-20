@@ -1,35 +1,32 @@
 ﻿
-using System;
 
-namespace ConsoleAppArray
+using System;
+using System.Collections;
+
+namespace ArrayListDemo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] data = new int[10];
-            data[0] = 0;
-            data[1] = 1;
-            data[2] = 2;
-            data[3] = 3;
-            data[4] = 4;
-            data[5] = 5;
-            data[6] = 6;
-            data[7] = 7;
-            data[8] = 8;
-            data[9] = 9;
-            data[10] = 10;
-            Console.WriteLine(data[0]);
-            Console.WriteLine(data[1]);
-            Console.WriteLine(data[2]);
-            Console.WriteLine(data[3]);
-            Console.WriteLine(data[4]);
-            Console.WriteLine(data[5]);
-            Console.WriteLine(data[6]);
-            Console.WriteLine(data[7]);
-            Console.WriteLine(data[8]);
-            Console.WriteLine(data[9]);
-            Console.WriteLine(data[10]);
+            ArrayList list = new ArrayList();
+            Console.WriteLine("Create a list");
+            Console.WriteLine("List capacity = {0,2}", list.Capacity);
+            for (int i = 0; i < 100; i++)
+            {
+                Console.Write("Add int to list : {0,2} => ", i);
+                list.Add(i);
+                Console.WriteLine("List count =  {0,3}, capacity = {1,3}  ",
+    list.Count, list.Capacity);
+            }
+            Console.WriteLine("-----------------------");
+            for (int i = 0; i < 100; i++)
+            {
+                Console.Write("Remove int from list : {0,2} => ", i);
+                list.Remove(i);
+                Console.WriteLine("List count =  {0,3}, capacity = {1,3}  ",
+    list.Count, list.Capacity);
+            }
             Console.ReadLine();
         }
     }
