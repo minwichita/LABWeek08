@@ -1,35 +1,51 @@
 ﻿
-using System;
 
-namespace ConsoleAppArray
+using System;
+using System.Collections.Generic;
+
+namespace StackDemo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] data = new int[10];
-            data[0] = 0;
-            data[1] = 1;
-            data[2] = 2;
-            data[3] = 3;
-            data[4] = 4;
-            data[5] = 5;
-            data[6] = 6;
-            data[7] = 7;
-            data[8] = 8;
-            data[9] = 9;
-            data[10] = 10;
-            Console.WriteLine(data[0]);
-            Console.WriteLine(data[1]);
-            Console.WriteLine(data[2]);
-            Console.WriteLine(data[3]);
-            Console.WriteLine(data[4]);
-            Console.WriteLine(data[5]);
-            Console.WriteLine(data[6]);
-            Console.WriteLine(data[7]);
-            Console.WriteLine(data[8]);
-            Console.WriteLine(data[9]);
-            Console.WriteLine(data[10]);
+            Stack<int> s = new Stack<int>();
+            Console.WriteLine("-- add 4 items -- ");
+            s.Push(10);
+            s.Push(20);
+            s.Push(30);
+            s.Push(40);
+            Console.Write("Stack contains : ");
+            foreach (var item in s)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine(Environment.NewLine + "s.Count  = {0}", s.Count);
+            Console.WriteLine("s.Peek = {0}", s.Peek());
+
+            Console.WriteLine("-- add more items -- ");
+            s.Push(50);
+            s.Push(60);
+
+            Console.Write("Queue contains : ");
+            foreach (var item in s)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine(Environment.NewLine + "s.Count  = {0}", s.Count);
+            Console.WriteLine("s.Peek = {0}", s.Peek());
+
+            Console.WriteLine("-- push -- ");
+            int i = s.Pop();
+            Console.WriteLine("i = {0}", i);
+
+            Console.Write("Stack contains : ");
+            foreach (var item in s)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine(Environment.NewLine + "s.Count  = {0}", s.Count);
+            Console.WriteLine("s.Peek = {0}", s.Peek());
             Console.ReadLine();
         }
     }
